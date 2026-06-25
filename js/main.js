@@ -19,15 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── SCROLL BEHAVIOR ──────────────────────────────────────
-    const updateNav = () => {
+    function updateNav() {
       if (window.scrollY > 60) {
         navbar.classList.remove('transparent');
         navbar.classList.add('solid');
+        navbar.style.backgroundColor = 'rgba(66, 66, 66, 0.3)';
+        navbar.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
+        navbar.style.backdropFilter = 'blur(10px)';
       } else {
         navbar.classList.remove('solid');
         navbar.classList.add('transparent');
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.boxShadow = '';
+        navbar.style.backdropFilter = '';
       }
-    };
+    }
     updateNav();
     window.addEventListener('scroll', updateNav);
 
